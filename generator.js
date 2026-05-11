@@ -538,9 +538,8 @@ function copyTextarea(areaId, hintId) {
       hint.textContent = 'Click textarea to copy';
       hint.className = 'copy-hint';
     }, 2000);
-  }).catch(() => {
-    area.select();
-    document.execCommand('copy');
+  }).catch(err => {
+    console.warn('[ULS] Clipboard write failed:', err);
   });
 }
 

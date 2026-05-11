@@ -491,9 +491,8 @@
         area.classList.remove('uls-textarea-copied');
         if (hintEl) { hintEl.textContent = 'click to copy'; hintEl.classList.remove('uls-copy-hint-ok'); }
       }, 2000);
-    }).catch(() => {
-      area.select();
-      document.execCommand('copy');
+    }).catch(err => {
+      console.warn('[ULS] Clipboard write failed:', err);
     });
   }
 
