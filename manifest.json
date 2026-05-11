@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "ULS Email Generator",
+  "version": "1.0.0",
+  "description": "Generate project inactive letters and other email templates for UL portal projects.",
+  "permissions": ["clipboardWrite", "storage"],
+  "host_permissions": ["https://portal.ul.com/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://portal.ul.com/Project/Details/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
